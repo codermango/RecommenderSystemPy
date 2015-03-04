@@ -18,7 +18,17 @@ class Movie:
     movieGenres = []
     
     def get_num_of_genres(self):
-        return len(self.movieGenres)
+        num = 0
+        for k in self.movieGenres:
+            if k.isOwned:
+                num += 1 
+        return num
+    
+    def get_genres_name(self):
+        genres = []
+        for k in self.movieGenres:
+            genres.append(k.genreName)
+        return genres    
     
     
 class User:
